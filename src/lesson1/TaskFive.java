@@ -12,17 +12,18 @@ public class TaskFive {
         int right = s.length() - 1;
 
         while (left < right) {
-            while (!Character.isLetterOrDigit(s.charAt(left))) {
+
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
                 left++;
             }
-            while (!Character.isLetterOrDigit(s.charAt(right))) {
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
                 right--;
             }
 
             char leftSym = Character.toLowerCase(s.charAt(left));
             char rightSym = Character.toLowerCase(s.charAt(right));
 
-            if (leftSym != rightSym) {
+            if (leftSym != rightSym){
                 return false;
             }
             left++;
